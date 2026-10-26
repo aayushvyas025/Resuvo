@@ -1,10 +1,10 @@
 import { Suspense } from "react";
-import Banner from "../components/home/Banner";
+import Header from "../components/home/Header";
 
 function Home() {
   return (
     <Suspense>
-      <Banner />
+     <Header />
     </Suspense>
   );
 }
