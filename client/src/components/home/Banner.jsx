@@ -5,7 +5,7 @@ function Banner() {
         <span class="px-3 py-1 rounded-lg text-white bg-blue-600 mr-2">
           New
         </span>
-        AI Resume Builder
+        AI Feature Added
       </p>
     </div>
   );
