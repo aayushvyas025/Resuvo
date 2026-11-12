@@ -1,0 +1,44 @@
+import { Star } from "lucide-react";
+import { images } from "../../constant/content";
+
+function HeroSection() {
+  return (
+    <div className="relative flex flex-col items-center justify-center text-sm px-4 md:px-16 lg:px-24 xl:px-40 text-black">
+      <div className="relative flex flex-col items-center justify-center text-sm px-4 md:px-16 lg:px-24 xl:px-40 text-black" />
+      <div className="flex items-center mt-24">
+        <div className="flex -space-x-3 pr-3">
+          {images.map((image) => (
+            <img
+              key={image.id}
+              src={image.image}
+              alt={image.title}
+              className={`size-8 object-cover rounded-full border-2 border-white hover:-translate-y-0.5 transition z-[${image.id}]`}
+            />
+          ))}
+        </div>
+        <div>
+          <div className="flex ">
+            {Array(5)
+              .fill(0)
+              .map((_, i) => (
+                <Star key={i} className="size-4  text-indigo-500" />
+              ))}
+          </div>
+          <p className="text-sm text-gray-700">Used by 10,000+ users</p>
+        </div>
+      </div>
+     <h1 className="text-5xl md:text-6xl font-semibold max-w-5xl text-center mt-4 md:leading-[70px]">
+  Build a resume that{" "}
+  <span className="bg-gradient-to-r from-indigo-700 to-indigo-600 bg-clip-text text-transparent text-nowrap">
+    opens doors
+  </span>{" "}
+  to new opportunities.
+</h1>
+ <p className="max-w-md text-center text-base my-7">
+  Create a professional, personalized resume with AI-powered tools that help bring your skills and experience to life.
+</p>
+    </div>
+  );
+}
+
+export default HeroSection;
