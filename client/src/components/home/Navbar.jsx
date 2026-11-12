@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { Menu } from "lucide-react";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 import ActionBtns from "./ActionBtns";
+import HamburgerMenu from "./HamburgerMenu";
 
 function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -11,6 +13,7 @@ function Navbar() {
         <Logo />
         <NavLinks />
         <ActionBtns />
+        <HamburgerMenu openMenu={openMenu} setOpenMenu={setOpenMenu} />
       </nav>
     </>
   );
