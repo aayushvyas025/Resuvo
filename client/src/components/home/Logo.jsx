@@ -1,4 +1,3 @@
-import React from "react";
 import appLogo from "../../assets/app-logo.png";
 import { Link } from "react-router-dom";
 
