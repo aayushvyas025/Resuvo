@@ -1,4 +1,3 @@
-import { Zap } from "lucide-react";
 import { testimonials } from "../../constant/content";
 import SectionChip from "./SectionChip";
 
@@ -6,7 +5,7 @@ function TestimonialSection() {
   return (
     <section
       id="testimonials"
-      className=" mt-24 flex flex-col items-start px-6 md:px-16 lg:px-24 text-sm max-w-6xl mx-auto"
+      className=" mt-10 flex flex-col items-start px-6 md:px-16 lg:px-24 text-sm max-w-6xl mx-auto"
     >
      <SectionChip title={"Testimonials"} />
       <h1 className="text-3xl font-medium bg-gradient-to-r from-slate-800 to-slate-500 text-transparent bg-clip-text mt-4">
