@@ -8,10 +8,10 @@ function Logo() {
       aria-label="Resuvo home"
       className="inline-flex min-w-0 items-center gap-2 sm:gap-3"
     >
-      <div className="flex justify-between gap-2 p-2">
+      <div className="flex justify-between items-center gap-2 p-2">
         <img
           src={appLogo}
-          className="size-8 min-w-0 object-contain sm:size-12 lg:size-16"
+          className="size-12 min-w-0 object-contain lg:size-16"
           alt="Resuvo logo"
         />
         <div className="min-w-0">
