@@ -1,4 +1,4 @@
-import { Download, LayoutPanelTop, NotebookPen } from "lucide-react";
+import { Download, LayoutPanelTop, NotebookPen, Star } from "lucide-react";
 
 export const images = [
   {
@@ -157,5 +157,41 @@ export const features = [
     icon: <Download className="size-6 text-indigo-300" />,
     description:
       "Ensures fast load speed, clean code, and high PageSpeed scores.",
+  },
+];
+
+export const testimonials = [
+  {
+    id: 1,
+    user: "Nayan Rajora",
+    image:
+      "https://instagram.fbho3-3.fna.fbcdn.net/v/t51.2885-19/474104131_472127082607582_8420408768093609965_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ig_cache_key=GENBQhzeMwynZa0BAO3fzU0pTdt0bkULAAAB0j-ccb7-5&ccb=7-5&_nc_sid=669407&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=cXKag7RbXR8Q7kNvwGTlLaG&_nc_oc=AdptygyQNUezgJrkzkuNv8mAvyn2wlPSoTkbdvt_w1JAss9UFiDU7_F4aIC2n02EBW8&_nc_zt=24&_nc_ht=instagram.fbho3-3.fna&_nc_ss=7b6a8&_nc_ct=RQosPBUCFQIAAAA&oh=00_AQTOcgr1UbzUjkcse4efjx2VbXBVjQcB2M5cyyagPHmG5g&oe=6AFD208A",
+    date: "10 March 2026",
+    icon: Array.from({ length: 5 }).fill(
+      <Star className="size-4 text-indigo-700" />,
+    ),
+    review: `"Creating my first professional resume felt overwhelming, but Resuvo made the entire process simple. The AI suggestions helped me present my skills and projects much better."`,
+  },
+  {
+    id: 2,
+    user: "Saijal Vyas",
+    image:
+      "https://instagram.fbho3-3.fna.fbcdn.net/v/t51.82787-19/832527461_18354831505174471_7576051973200890616_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ig_cache_key=GGVcnzHHL8c7nzVBAPhKiUYhiyNpbmNDAQAB0j-ccb7-5&ccb=7-5&_nc_sid=669407&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=VvO-h1mZnIsQ7kNvwF8wZsp&_nc_oc=AdoATbUmcz6qsH87wDGtBIOkWAPQoCXT9JhhDK2yXVZG4fPgnfy0aPMCzwKXXPlFZsg&_nc_zt=24&_nc_ht=instagram.fbho3-3.fna&_nc_gid=2m9KJD4HwVbM9VPOIxcTqA&_nc_ss=7b6a8&_nc_ct=RQosPBUCFQIAAAA&oh=00_AQTxhOz0yxdOw6xxlzuy_q3iedx4B9dttJbMTVID-X_9kw&oe=6AFCF1FE",
+    date: "25 Oct 2026",
+    icon: Array.from({ length: 5 }).fill(
+      <Star className="size-4 text-indigo-700" />,
+    ),
+    review: `"I really like how easy it is to customize my resume with Resuvo. The templates look clean and professional, and the live preview makes editing so much easier."`,
+  },
+  {
+    id: 3,
+    user: "Raj Kumar",
+    image:
+      "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    date: "10 Nov 2026",
+    icon: Array.from({ length: 5 }).fill(
+      <Star className="size-4 text-indigo-700" />,
+    ),
+    review: `"Resuvo saves me so much time when updating my resume. From AI-powered content suggestions to downloading a polished PDF, everything feels smooth and straightforward."`,
   },
 ];
