@@ -1,7 +1,6 @@
 import { MoveRight, Star } from "lucide-react";
 import { Link } from "react-router-dom";
-import { companiesLogo, images } from "../../constant/content";
-import React from "react";
+import { images } from "../../constant/content";
 
 function HeroSection() {
   return (
@@ -53,14 +52,6 @@ function HeroSection() {
       <p className="py-6 text-slate-600 mt-8 text-base">
         Trusting by leading brands, including
       </p>
-      <div
-        className="flex flex-wrap justify-between max-sm:justify-center gap-6 max-w-3xl w-full mx-auto py-4"
-        id="logo-container"
-      >
-        {companiesLogo.map((company, index) => (
-          <React.Fragment key={index}>{company.logo}</React.Fragment>
-        ))}
-      </div>
     </section>
   );
 }

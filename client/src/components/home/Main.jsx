@@ -1,3 +1,4 @@
+import AudienceSection from "./AudienceSection"
 import CTASection from "./CTASection"
 import FeatureSection from "./FeatureSection"
 import HeroSection from "./HeroSection"
@@ -8,6 +9,7 @@ function Main() {
   return (
     <div className='min-h-screen pb-20'>
       <HeroSection />
+      <AudienceSection  />
       <FeatureSection />
       <TestimonialSection />
       <PromotionalSection />
