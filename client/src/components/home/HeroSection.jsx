@@ -49,9 +49,6 @@ function HeroSection() {
           <MoveRight className="size-8 px-2 transition-all duration-200 hover:translate-x-1" />
         </Link>
       </div>
-      <p className="py-6 text-slate-600 mt-8 text-base">
-        Trusting by leading brands, including
-      </p>
     </section>
   );
 }
