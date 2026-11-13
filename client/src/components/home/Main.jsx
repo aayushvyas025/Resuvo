@@ -1,5 +1,6 @@
 import FeatureSection from "./FeatureSection"
 import HeroSection from "./HeroSection"
+import PromotionalSection from "./PromotionalSection"
 import TestimonialSection from "./TestimonialSection"
 
 function Main() {
@@ -8,6 +9,7 @@ function Main() {
       <HeroSection />
       <FeatureSection />
       <TestimonialSection />
+      <PromotionalSection />
     </div>
   )
 }
