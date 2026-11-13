@@ -1,5 +1,7 @@
-import { Star } from "lucide-react";
-import { images } from "../../constant/content";
+import { MoveRight, Star } from "lucide-react";
+import { Link } from "react-router-dom";
+import { companiesLogo, images } from "../../constant/content";
+import React from "react";
 
 function HeroSection() {
   return (
@@ -27,16 +29,38 @@ function HeroSection() {
           <p className="text-sm text-gray-700">Used by 10,000+ users</p>
         </div>
       </div>
-     <h1 className="text-5xl md:text-6xl font-semibold max-w-5xl text-center mt-4 md:leading-[70px]">
-  Build a resume that{" "}
-  <span className="bg-gradient-to-r from-indigo-700 to-indigo-600 bg-clip-text text-transparent text-nowrap">
-    opens doors
-  </span>{" "}
-  to new opportunities.
-</h1>
- <p className="max-w-md text-center text-base my-7">
-  Create a professional, personalized resume with AI-powered tools that help bring your skills and experience to life.
-</p>
+      <h1 className="text-5xl md:text-6xl font-semibold max-w-5xl text-center mt-4 md:leading-[70px]">
+        Build a resume that{" "}
+        <span className="bg-gradient-to-r from-indigo-700 to-indigo-600 bg-clip-text text-transparent text-nowrap">
+          opens doors
+        </span>{" "}
+        to new opportunities.
+      </h1>
+      <p className="max-w-md text-center text-base my-7 text-md">
+        Create a professional, personalized resume with AI-powered tools that
+        help bring your skills and experience to life.
+      </p>
+
+      <div className="flex items-center">
+        <Link
+          to="/auth"
+          className="bg-indigo-500 hover:bg-indigo-600 text-white rounded-full px-9 h-12 m-1 ring-offset-2 ring-1 ring-indigo-400 flex items-center transition-colors"
+        >
+          Get started
+          <MoveRight className="size-8 px-2 transition-all duration-200 hover:translate-x-1" />
+        </Link>
+      </div>
+      <p className="py-6 text-slate-600 mt-8 text-base">
+        Trusting by leading brands, including
+      </p>
+      <div
+        className="flex flex-wrap justify-between max-sm:justify-center gap-6 max-w-3xl w-full mx-auto py-4"
+        id="logo-container"
+      >
+        {companiesLogo.map((company, index) => (
+          <React.Fragment key={index}>{company.logo}</React.Fragment>
+        ))}
+      </div>
     </div>
   );
 }
