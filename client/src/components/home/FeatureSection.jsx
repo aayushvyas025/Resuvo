@@ -2,7 +2,7 @@ import { features } from "../../constant/content"
 
 function FeatureSection() {
   return (
-    <div id="features" class="mt-26 grid border rounded-lg max-w-6xl mx-auto border-gray-200/70 grid-cols-1 divide-y divide-gray-200/70 lg:grid-cols-3 lg:divide-x lg:divide-y-0" >
+    <section id="features" class="mt-26 grid border rounded-lg max-w-6xl mx-auto border-gray-200/70 grid-cols-1 divide-y divide-gray-200/70 lg:grid-cols-3 lg:divide-x lg:divide-y-0" >
     {
         features.map((feature) => 
             <div class="flex flex-col items-start gap-4 hover:bg-gray-50 transition duration-300 p-8 pb-14">
@@ -16,7 +16,7 @@ function FeatureSection() {
     </div>
     )
     }
-</div>
+</section>
   )
 }
 
