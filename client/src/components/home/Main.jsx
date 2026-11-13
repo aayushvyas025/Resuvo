@@ -1,3 +1,4 @@
+import CTASection from "./CTASection"
 import FeatureSection from "./FeatureSection"
 import HeroSection from "./HeroSection"
 import PromotionalSection from "./PromotionalSection"
@@ -10,6 +11,7 @@ function Main() {
       <FeatureSection />
       <TestimonialSection />
       <PromotionalSection />
+      <CTASection />
     </div>
   )
 }
