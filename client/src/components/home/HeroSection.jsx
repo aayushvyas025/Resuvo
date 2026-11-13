@@ -5,7 +5,7 @@ import React from "react";
 
 function HeroSection() {
   return (
-    <div className="relative flex flex-col items-center justify-center text-sm px-4 md:px-16 lg:px-24 xl:px-40 text-black">
+    <section className="relative flex flex-col items-center justify-center text-sm px-4 md:px-16 lg:px-24 xl:px-40 text-black">
       <div className="absolute top-28 xl:top-10 -z-10 left-1/4 size-72 sm:size-96 xl:size-120 2xl:size-132 bg-indigo-400 blur-[100px] opacity-30" />
       <div className="flex items-center mt-24">
         <div className="flex -space-x-3 pr-3">
@@ -61,7 +61,7 @@ function HeroSection() {
           <React.Fragment key={index}>{company.logo}</React.Fragment>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

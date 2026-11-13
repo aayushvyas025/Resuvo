@@ -1,3 +1,5 @@
+import { Download, LayoutPanelTop, NotebookPen } from "lucide-react";
+
 export const images = [
   {
     id: 1,
@@ -131,5 +133,29 @@ export const companiesLogo = [
         />
       </svg>
     ),
+  },
+];
+
+export const features = [
+  {
+    id: 1,
+    title: "AI-Powered Resume Creation",
+    icon: <LayoutPanelTop className="size-6 text-indigo-300" />,
+    description:
+      "Generate professional, personalized resumes with AI-powered content suggestions that highlight your skills, experience, and achievements.",
+  },
+  {
+    id: 2,
+    title: "Customizable Professional Templates",
+    icon: <NotebookPen className="size-6 text-indigo-300" />,
+    description:
+      "Choose from beautifully designed templates and customize every section of your resume with an intuitive editor and real-time preview.",
+  },
+  {
+    id: 3,
+    title: "Instant PDF Export & Sharing",
+    icon: <Download className="size-6 text-indigo-300" />,
+    description:
+      "Ensures fast load speed, clean code, and high PageSpeed scores.",
   },
 ];
