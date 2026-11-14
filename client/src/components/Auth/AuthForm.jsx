@@ -58,9 +58,9 @@ function AuthForm() {
           showPassword={showPassword}
           handleShowPassword={() => setShowPassword(!showPassword)}
         />
-        <div className="mt-3 text-indigo-500">
+        <div className="mt-3 w-96 text-start text-indigo-500">
           <a className="text-base" href="#">
-            Forgot password?
+            Forgot password ?
           </a>
         </div>
 
