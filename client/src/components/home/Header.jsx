@@ -5,7 +5,7 @@ function Header() {
   return (
     <>
       <Banner />
-      <Navbar />
+      <Navbar  />
     </>
   );
 }

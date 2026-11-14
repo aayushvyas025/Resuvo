@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
-import Logo from "./Logo";
+import Logo from "../helpers/Logo";
 import NavLinks from "./NavLinks";
 import ActionBtns from "./ActionBtns";
 import HamburgerMenu from "./HamburgerMenu";

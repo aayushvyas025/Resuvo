@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Logo() {
   return (
     <Link
-      href="#"
+      to="#"
       aria-label="Resuvo home"
       className="inline-flex min-w-0 items-center gap-2 sm:gap-3"
     >
