@@ -3,8 +3,10 @@ import Input from "../helpers/Input";
 import { Lock, Mail, User } from "lucide-react";
 
 function AuthForm() {
+  const query = new URLSearchParams(window.location.search);
+  const urlState = query.get("state");
+  const [formState, setFormState] = useState(urlState || "signin");
   const [showPassword, setShowPassword] = useState(false);
-  const [formState, setFormState] = useState("login");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,17 +19,17 @@ function AuthForm() {
 
   return (
     <form
-      className="max-w-2xl w-full text-center border border-indigo-300/60 rounded-2xl px-8 bg-white"
+      className="max-w-xl w-full text-center border border-indigo-300/60 rounded-2xl px-8 bg-white"
       onSubmit={handleSubmit}
     >
       <h1 className="text-gray-900 text-3xl mt-10 font-medium">
-        {formState === "login" ? "Login" : "Sign Up"}
+        {formState === "signin" ? "Login" : "Sign Up"}
       </h1>
       <p className="text-gray-600 text-md mt-2 mb-4">
-        Please {formState === "login" ? "sign in" : "sign up"} to continue
+        Please {formState === "signin" ? "sign in" : "sign up"} to continue
       </p>
       <div className="flex  flex-col items-center justify-center gap-2 p-2">
-        {formState !== "login" && (
+        {formState !== "signin" && (
           <Input
             type="text"
             value={formData.name}
@@ -66,16 +68,18 @@ function AuthForm() {
           type="submit"
           className="mt-2 max-w-sm w-full h-11 rounded-full text-white bg-indigo-500 hover:opacity-90 transition-opacity"
         >
-          Login
+          {formState === "signin" ? "Login" : "Sing Up"}
         </button>
         <p className="text-gray-500 text-sm mt-2 mb-11">
-          Don’t have an account?{" "}
+          {formState === "signin" ? "Don’t" : "Already"} have an account?{" "}
           <button
             className="text-indigo-500"
             type="button"
-            onClick={()  => setFormState(formState === "login" ? "register" : "login")}
+            onClick={() =>
+              setFormState(formState === "signin" ? "register" : "signin")
+            }
           >
-            Sign up
+            {formState === "signin" ? "Sign Up" : "Sign In"}
           </button>
         </p>
       </div>
