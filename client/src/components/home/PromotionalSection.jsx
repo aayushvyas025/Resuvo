@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function PromotionalSection() {
   return (
-    <section className="mt-20 mx-auto flex flex-col md:flex-row items-center justify-center text-sm border border-gray-200 rounded-2xl max-w-6xl w-[calc(100%-1rem)] bg-white p-2">
+    <section className="mt-20 mx-auto flex flex-col md:flex-row items-center justify-center text-sm border border-gray-200 rounded-2xl max-w-6xl w-full bg-white p-2">
       <div className="flex flex-col text-center md:text-left items-center md:items-start pt-14 md:p-10">
         <h2 className="md:text-4xl text-2xl font-bold text-gray-800">
           Create your resume.

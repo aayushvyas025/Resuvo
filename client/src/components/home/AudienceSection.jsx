@@ -2,7 +2,7 @@ import { carrierOptions } from "../../constant/content";
 
 function AudienceSection() {
   return (
-    <section className="mt-14 w-screen py-12 px-4 text-center">
+    <section className="mt-14 w-full py-12 text-center">
       <h2 className="text-3xl font-semibold text-gray-700">
         Built for Every Career Journey
       </h2>

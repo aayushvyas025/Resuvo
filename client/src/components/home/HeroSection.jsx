@@ -30,7 +30,7 @@ function HeroSection() {
       </div>
       <h1 className="text-5xl md:text-6xl font-semibold max-w-5xl text-center mt-4 md:leading-[70px]">
         Build a resume that{" "}
-        <span className="bg-gradient-to-r from-indigo-700 to-indigo-600 bg-clip-text text-transparent text-nowrap">
+        <span className="bg-gradient-to-r from-indigo-700 to-indigo-600 bg-clip-text text-transparent">
           opens doors
         </span>{" "}
         to new opportunities.

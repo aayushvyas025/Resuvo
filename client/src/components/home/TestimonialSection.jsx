@@ -32,7 +32,7 @@ function TestimonialSection() {
             <img
               class="h-8 w-8 rounded-full"
               src={testimonial.image}
-              alt="Richard Nelson"
+              alt={testimonial.user}
               />
             <p className="font-medium text-gray-800">{testimonial.user}</p>
           </div>
