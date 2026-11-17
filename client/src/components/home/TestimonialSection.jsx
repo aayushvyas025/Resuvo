@@ -11,7 +11,7 @@ function TestimonialSection() {
       <h1 className="text-3xl font-medium bg-gradient-to-r from-slate-800 to-slate-500 text-transparent bg-clip-text mt-4">
         Don't just take our words
       </h1>
-      <p class="text-slate-500 mt-4 max-w-2xl text-base">
+      <p className="text-slate-500 mt-4 max-w-2xl text-base">
         Hear what our users say about us. We're always looking for ways to
         improve. If you have a positive experience with us, leave a review.
       </p>
