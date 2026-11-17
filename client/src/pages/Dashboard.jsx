@@ -27,7 +27,7 @@ function Dashboard() {
   async function handleFormSubmit(e) {
    e.preventDefault();
    setCreateResume(false);
-   navigate('/builder/demoID01');
+   navigate('builder/demoID01');
   }
 
 
