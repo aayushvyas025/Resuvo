@@ -37,7 +37,14 @@ function ResumeBuilderForm({
         <button className="text-center w-full text-white bg-indigo-400 p-2 rounded-md hover:bg-indigo-600">
           {submitLabel}
         </button>
-          <XIcon className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 cursor-pointer transition-colors" onClick={onClose} />
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close modal"
+          className="absolute right-4 top-4 text-slate-400 transition-colors hover:text-slate-600"
+        >
+          <XIcon size={20} />
+        </button>
       </div>
     </form>
   );
