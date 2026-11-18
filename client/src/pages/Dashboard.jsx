@@ -10,26 +10,44 @@ import ResumeBuilderForm from "../components/Form/ResumeBuilderForm";
 
 function Dashboard() {
   const [allResumes, setAllResumes] = useState([]);
-  const [createResume, setCreateResume] = useState(false);
-  const [uploadResume, setUploadResume] = useState(false);
+  const [activeModal, setActiveModal] = useState(null);
   const [resumeTitle, setResumeTitle] = useState("");
-  const [resume, setResume] = useState(null);
+  const [resumeFile, setResumeFile] = useState(null);
   const [editResumeId, setEditResumeId] = useState("");
   const navigate = useNavigate();
 
-  const loadAllResumes = async () => {
+  const loadAllResumes = () => {
     setAllResumes(dummyResumeData);
+  };
+
+  const handleCloseModal = () => {
+    setActiveModal(null);
+    setResumeTitle("");
+    setResumeFile(null);
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+
+    if (!file) return;
+
+    if (file.type !== "application/pdf") {
+      // show validation error
+      return;
+    }
+
+    setResumeFile(file);
   };
 
   async function handleCreateResume(e) {
     e.preventDefault();
-    setCreateResume(false);
+    setActiveModal(null);
     navigate("builder/demoID01");
   }
 
   async function handleUploadResume(e) {
     e.preventDefault();
-    setUploadResume(false);
+    setActiveModal(null);
     navigate("builder/demoID01");
   }
 
@@ -46,12 +64,12 @@ function Dashboard() {
             <DashboardActionBtn
               icon={PlusIcon}
               text={"Create Resume"}
-              onClick={() => setCreateResume(true)}
+              onClick={() => setActiveModal("create")}
             />
             <DashboardActionBtn
               icon={UploadCloudIcon}
               text={"Upload Resume"}
-              onClick={() => setUploadResume(true)}
+              onClick={() => setActiveModal("upload")}
             />
           </div>
           <HorizontalRule />
@@ -70,32 +88,21 @@ function Dashboard() {
             })}
           </div>
         </div>
-        {createResume && (
+        {activeModal && (
           <ResumeBuilderForm
-            title={"Create A Resume"}
-            text="Create"
-            formTitle={resumeTitle}
-            handleOnChange={(e) => setResumeTitle(e.target.value)}
-            handleCloseForm={() => {
-              setCreateResume(false);
-              setResumeTitle("");
-            }}
-            handleFormSubmit={handleCreateResume}
-            closeModal={() => setCreateResume(false)}
-          />
-        )}
-        {uploadResume && (
-          <ResumeBuilderForm
-            title={"Upload A Resume"}
-            text={"Upload"}
-            formTitle={resumeTitle}
-            handleOnChange={(e) => setAllResumes(e.target.value)}
-            handleCloseForm={() => {
-              setUploadResume(false);
-              setResumeTitle("");
-            }}
-            handleFormSubmit={handleUploadResume}
-            closeModal={() => setUploadResume(false)}
+            modalTitle={
+              activeModal === "create" ? "Create A Resume" : "Upload A Resume"
+            }
+            submitLabel={activeModal === "create" ? "Create" : "Upload"}
+            resumeTitle={resumeTitle}
+            onTitleChange={(e) => setResumeTitle(e.target.value)}
+            onSubmit={
+              activeModal === "create" ? handleCreateResume : handleUploadResume
+            }
+            onClose={handleCloseModal}
+            isUploadMode={activeModal === "upload"}
+            resumeFile={resumeFile}
+            onFileChange={handleFileChange ?? null}
           />
         )}
       </div>
