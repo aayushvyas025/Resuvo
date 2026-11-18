@@ -16,7 +16,7 @@ function Input({
       <input
         type={type}
         placeholder={placeholder}
-        className="bg-transparent text-gray-500 placeholder-gray-500 outline-none text-base w-full h-full"
+        className="custom-input bg-transparent text-gray-500 placeholder-gray-500 outline-none text-base w-full h-full"
         onChange={onChange}
         value={value}
         required

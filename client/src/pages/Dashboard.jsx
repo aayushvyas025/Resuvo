@@ -5,9 +5,8 @@ import DashboardActionBtn from "../components/Dashboard/DashboardActionBtn";
 import HorizontalRule from "../components/helpers/HorizontalRule";
 import { dummyResumeData, resumesThemeColor } from "../constant/content";
 import UsersResumeChip from "../components/helpers/UsersResumeChip";
-import CreateResumeForm from "../components/Form/CreateResumeForm";
+import CreateResumeForm from "../components/Form/ResumeBuilderForm";
 import { useNavigate } from "react-router-dom";
-
 
 function Dashboard() {
   const [allResumes, setAllResumes] = useState([]);
@@ -16,21 +15,17 @@ function Dashboard() {
   const [resumeTitle, setResumeTitle] = useState("");
   const [resume, setResume] = useState(null);
   const [editResumeId, setEditResumeId] = useState("");
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const loadAllResumes = async () => {
     setAllResumes(dummyResumeData);
   };
 
- 
-
   async function handleFormSubmit(e) {
-   e.preventDefault();
-   setCreateResume(false);
-   navigate('builder/demoID01');
+    e.preventDefault();
+    setCreateResume(false);
+    navigate("builder/demoID01");
   }
-
-
 
   useEffect(() => {
     loadAllResumes();
@@ -42,7 +37,11 @@ function Dashboard() {
         <div className="max-w-7xl mx-auto px-4 py-8">
           <DashboardGreeting username={"Aayush Vyas"} />
           <div className="flex gap-4">
-            <DashboardActionBtn icon={PlusIcon} text={"Create Resume"} onClick={() => setCreateResume(true)} />
+            <DashboardActionBtn
+              icon={PlusIcon}
+              text={"Create Resume"}
+              onClick={() => setCreateResume(true)}
+            />
             <DashboardActionBtn icon={UploadCloudIcon} text={"Upload Resume"} />
           </div>
           <HorizontalRule />
@@ -63,7 +62,9 @@ function Dashboard() {
         </div>
         {createResume && (
           <CreateResumeForm
-            title={resumeTitle}
+            title={"Create A Resume"}
+            text="Create"
+            formTitle={resumeTitle}
             handleOnChange={(e) => setResumeTitle(e.target.value)}
             handleCloseForm={() => {
               setCreateResume(false);
@@ -73,6 +74,7 @@ function Dashboard() {
             closeModal={() => setCreateResume(false)}
           />
         )}
+        {uploadResume && ""}
       </div>
     </Suspense>
   );
