@@ -8,6 +8,7 @@ function ResumeBuilderForm({
   handleOnChange,
   handleFormSubmit,
   closeModal,
+  uploadType=false
 }) {
   return (
     <form

@@ -5,8 +5,8 @@ import DashboardActionBtn from "../components/Dashboard/DashboardActionBtn";
 import HorizontalRule from "../components/helpers/HorizontalRule";
 import { dummyResumeData, resumesThemeColor } from "../constant/content";
 import UsersResumeChip from "../components/helpers/UsersResumeChip";
-import CreateResumeForm from "../components/Form/ResumeBuilderForm";
 import { useNavigate } from "react-router-dom";
+import ResumeBuilderForm from "../components/Form/ResumeBuilderForm";
 
 function Dashboard() {
   const [allResumes, setAllResumes] = useState([]);
@@ -21,9 +21,15 @@ function Dashboard() {
     setAllResumes(dummyResumeData);
   };
 
-  async function handleFormSubmit(e) {
+  async function handleCreateResume(e) {
     e.preventDefault();
     setCreateResume(false);
+    navigate("builder/demoID01");
+  }
+
+  async function handleUploadResume(e) {
+    e.preventDefault();
+    setUploadResume(false);
     navigate("builder/demoID01");
   }
 
@@ -42,7 +48,11 @@ function Dashboard() {
               text={"Create Resume"}
               onClick={() => setCreateResume(true)}
             />
-            <DashboardActionBtn icon={UploadCloudIcon} text={"Upload Resume"} />
+            <DashboardActionBtn
+              icon={UploadCloudIcon}
+              text={"Upload Resume"}
+              onClick={() => setUploadResume(true)}
+            />
           </div>
           <HorizontalRule />
           <div className="grid grid-cols-2 sm:flex flex-wrap gap-4">
@@ -61,7 +71,7 @@ function Dashboard() {
           </div>
         </div>
         {createResume && (
-          <CreateResumeForm
+          <ResumeBuilderForm
             title={"Create A Resume"}
             text="Create"
             formTitle={resumeTitle}
@@ -70,11 +80,24 @@ function Dashboard() {
               setCreateResume(false);
               setResumeTitle("");
             }}
-            handleFormSubmit={handleFormSubmit}
+            handleFormSubmit={handleCreateResume}
             closeModal={() => setCreateResume(false)}
           />
         )}
-        {uploadResume && ""}
+        {uploadResume && (
+          <ResumeBuilderForm
+            title={"Upload A Resume"}
+            text={"Upload"}
+            formTitle={resumeTitle}
+            handleOnChange={(e) => setAllResumes(e.target.value)}
+            handleCloseForm={() => {
+              setUploadResume(false);
+              setResumeTitle("");
+            }}
+            handleFormSubmit={handleUploadResume}
+            closeModal={() => setUploadResume(false)}
+          />
+        )}
       </div>
     </Suspense>
   );
