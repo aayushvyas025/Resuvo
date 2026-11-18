@@ -1,6 +1,6 @@
 import { FilePenLineIcon, PencilIcon, TrashIcon } from "lucide-react";
 
-function UsersResumeChip({ title, baseColor, updatedAt }) {
+function UsersResumeChip({ title, baseColor, updatedAt, onClick }) {
   return (
     <button
       className="relative w-full sm:max-w-36 p-4 pb-4 flex flex-col items-center justify-center rounded-lg gap-2 border group hover:shadow-lg transition-all duration-300 cursor-pointer"
@@ -8,6 +8,7 @@ function UsersResumeChip({ title, baseColor, updatedAt }) {
         background: `linear-gradient(135deg, ${baseColor}10, ${baseColor}40)`,
         borderColor: `${baseColor + "40"}`,
       }}
+      onClick={onClick}
     >
       <FilePenLineIcon
         className={`size-6  group-hover:scale-105 transition-all`}

@@ -83,6 +83,7 @@ function Dashboard() {
                   baseColor={baseColor}
                   title={resume.title}
                   updatedAt={resume.updatedAt}
+                  onClick={() => navigate(`builder/${resume.userId}`)}
                 />
               );
             })}
