@@ -19,12 +19,14 @@ function DeleteResumeModal({ closeModal, handleResumeDelete }) {
           <button
             type="button"
             className="w-full md:w-36 h-10 rounded-md border border-gray-300 bg-white text-gray-600 font-medium text-sm hover:bg-gray-100 active:scale-95 transition"
+            onClick={closeModal}
           >
             Cancel
           </button>
           <button
             type="button"
             className="w-full md:w-36 h-10 rounded-md text-white bg-red-600 font-medium text-sm hover:bg-red-700 active:scale-95 transition"
+            onClick={handleResumeDelete}
           >
             Confirm
           </button>

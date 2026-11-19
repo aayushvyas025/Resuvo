@@ -62,7 +62,12 @@ function Dashboard() {
   }
 
   async function handleDeleteResume(resumeId) {
-    const confirm = alert("");
+    if (!resumeId) {
+      // toast
+      return;
+    }
+    setAllResumes((prev) => prev.filter((resume) => resume._id !== resumeId));
+    setActiveModal(null);
   }
 
   useEffect(() => {
@@ -97,7 +102,7 @@ function Dashboard() {
                   baseColor={baseColor}
                   title={resume.title}
                   updatedAt={resume.updatedAt}
-                  onClick={() => navigate(`builder/${resume._id}`)}
+                  href={`builder/${resume._id}`}
                   handleEdit={() => {
                     setActiveModal("edit");
                     setEditResumeId(resume._id);
@@ -140,7 +145,9 @@ function Dashboard() {
             onFileChange={handleFileChange}
           />
         )}
-        {activeModal === "delete" && <DeleteResumeModal />}
+        {activeModal === "delete" && (
+          <DeleteResumeModal closeModal={() => setActiveModal(null)} />
+        )}
       </div>
     </Suspense>
   );
