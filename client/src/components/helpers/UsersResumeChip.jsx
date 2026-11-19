@@ -31,17 +31,26 @@ function UsersResumeChip({
         Updated on {new Date(updatedAt).toLocaleDateString()}
       </p>
       <div
-        onClick={(e) => e.preventDefault()}
+        onClick={(e) => e.stopPropagation()}
         className="absolute top-1 right-1 group-hover:flex items-center hidden"
       >
-        <TrashIcon
-          className="size-7 p-1.5 hover:bg-white/50 rounded text-slate-700 transition-colors"
+        <button
+          type="button"
+          aria-label="Delete resume"
           onClick={handleDelete}
-        />
-        <PencilIcon
-          className="size-7 p-1.5 hover:bg-white/50 rounded text-slate-700 transition-colors"
+          className="p-1.5 hover:bg-white/50 rounded text-slate-700"
+        >
+          <TrashIcon className="size-4" />
+        </button>
+
+        <button
+          type="button"
+          aria-label="Edit resume"
           onClick={handleEdit}
-        />
+          className="p-1.5 hover:bg-white/50 rounded text-slate-700"
+        >
+          <PencilIcon className="size-4" />
+        </button>
       </div>
     </button>
   );

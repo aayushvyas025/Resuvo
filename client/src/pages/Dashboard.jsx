@@ -7,6 +7,7 @@ import { dummyResumeData, resumesThemeColor } from "../constant/content";
 import UsersResumeChip from "../components/helpers/UsersResumeChip";
 import { useNavigate } from "react-router-dom";
 import ResumeBuilderForm from "../components/Form/ResumeBuilderForm";
+import DeleteResumeModal from "../components/helpers/DeleteResumeModal";
 
 function Dashboard() {
   const [allResumes, setAllResumes] = useState([]);
@@ -60,6 +61,10 @@ function Dashboard() {
     navigate(`builder/${resumeId}`);
   }
 
+  async function handleDeleteResume(resumeId) {
+    const confirm = alert("");
+  }
+
   useEffect(() => {
     loadAllResumes();
   }, []);
@@ -92,11 +97,13 @@ function Dashboard() {
                   baseColor={baseColor}
                   title={resume.title}
                   updatedAt={resume.updatedAt}
-                  onClick={() => {
+                  onClick={() => navigate(`builder/${resume._id}`)}
+                  handleEdit={() => {
+                    setActiveModal("edit");
                     setEditResumeId(resume._id);
                     setResumeTitle(resume.title);
-                    setActiveModal("edit");
                   }}
+                  handleDelete={() => setActiveModal("delete")}
                 />
               );
             })}
@@ -133,6 +140,7 @@ function Dashboard() {
             onFileChange={handleFileChange}
           />
         )}
+        {activeModal === "delete" && <DeleteResumeModal />}
       </div>
     </Suspense>
   );
