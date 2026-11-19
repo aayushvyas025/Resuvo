@@ -14,7 +14,7 @@ function Dashboard() {
   const [activeModal, setActiveModal] = useState(null);
   const [resumeTitle, setResumeTitle] = useState("");
   const [resumeFile, setResumeFile] = useState(null);
-  const [editResumeId, setEditResumeId] = useState(null);
+  const [selectResumeId, setSelectResumeId] = useState(null);
   const navigate = useNavigate();
 
   const loadAllResumes = () => {
@@ -25,7 +25,7 @@ function Dashboard() {
     setActiveModal(null);
     setResumeTitle("");
     setResumeFile(null);
-    setEditResumeId(null);
+    setSelectResumeId(null);
   };
 
   const handleFileChange = (e) => {
@@ -55,19 +55,20 @@ function Dashboard() {
 
   async function handleEditResume(e) {
     e.preventDefault();
-    if (!editResumeId) return;
-    const resumeId = editResumeId;
+    if (!selectResumeId) return;
+    const resumeId = selectResumeId;
     handleCloseModal();
     navigate(`builder/${resumeId}`);
   }
 
-  async function handleDeleteResume(resumeId) {
+  function handleDeleteResume(resumeId) {
     if (!resumeId) {
       // toast
       return;
     }
     setAllResumes((prev) => prev.filter((resume) => resume._id !== resumeId));
-    setActiveModal(null);
+
+    handleCloseModal();
   }
 
   useEffect(() => {
@@ -105,10 +106,13 @@ function Dashboard() {
                   href={`builder/${resume._id}`}
                   handleEdit={() => {
                     setActiveModal("edit");
-                    setEditResumeId(resume._id);
+                    setSelectResumeId(resume._id);
                     setResumeTitle(resume.title);
                   }}
-                  handleDelete={() => setActiveModal("delete")}
+                  handleDelete={() => {
+                    setActiveModal("delete");
+                    setSelectResumeId(resume._id);
+                  }}
                 />
               );
             })}
@@ -146,7 +150,10 @@ function Dashboard() {
           />
         )}
         {activeModal === "delete" && (
-          <DeleteResumeModal closeModal={() => setActiveModal(null)} />
+          <DeleteResumeModal
+            closeModal={() => setActiveModal(null)}
+            handleDeleteResume={() => handleDeleteResume(selectResumeId)}
+          />
         )}
       </div>
     </Suspense>

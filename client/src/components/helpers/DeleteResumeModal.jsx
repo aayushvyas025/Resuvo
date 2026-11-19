@@ -1,6 +1,6 @@
 import { Trash } from "lucide-react";
 
-function DeleteResumeModal({ closeModal, handleResumeDelete }) {
+function DeleteResumeModal({ closeModal, handleDeleteResume }) {
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur bg-opacity-50 z-10 flex items-center justify-center">
       <div className="flex flex-col items-center bg-white shadow-md rounded-xl py-6 px-5 md:w-[460px] w-[370px] border border-gray-200">
@@ -26,7 +26,7 @@ function DeleteResumeModal({ closeModal, handleResumeDelete }) {
           <button
             type="button"
             className="w-full md:w-36 h-10 rounded-md text-white bg-red-600 font-medium text-sm hover:bg-red-700 active:scale-95 transition"
-            onClick={handleResumeDelete}
+            onClick={handleDeleteResume}
           >
             Confirm
           </button>
