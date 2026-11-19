@@ -1,6 +1,13 @@
 import { FilePenLineIcon, PencilIcon, TrashIcon } from "lucide-react";
 
-function UsersResumeChip({ title, baseColor, updatedAt, onClick }) {
+function UsersResumeChip({
+  title,
+  baseColor,
+  updatedAt,
+  onClick,
+  handleEdit,
+  handleDelete,
+}) {
   return (
     <button
       className="relative w-full sm:max-w-36 p-4 pb-4 flex flex-col items-center justify-center rounded-lg gap-2 border group hover:shadow-lg transition-all duration-300 cursor-pointer"
@@ -23,9 +30,18 @@ function UsersResumeChip({ title, baseColor, updatedAt, onClick }) {
       >
         Updated on {new Date(updatedAt).toLocaleDateString()}
       </p>
-      <div className="absolute top-1 right-1 group-hover:flex items-center hidden">
-        <TrashIcon className="size-7 p-1.5 hover:bg-white/50 rounded text-slate-700 transition-colors" />
-         <PencilIcon className="size-7 p-1.5 hover:bg-white/50 rounded text-slate-700 transition-colors" />
+      <div
+        onClick={(e) => e.preventDefault()}
+        className="absolute top-1 right-1 group-hover:flex items-center hidden"
+      >
+        <TrashIcon
+          className="size-7 p-1.5 hover:bg-white/50 rounded text-slate-700 transition-colors"
+          onClick={handleDelete}
+        />
+        <PencilIcon
+          className="size-7 p-1.5 hover:bg-white/50 rounded text-slate-700 transition-colors"
+          onClick={handleEdit}
+        />
       </div>
     </button>
   );

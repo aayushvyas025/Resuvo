@@ -13,7 +13,7 @@ function Dashboard() {
   const [activeModal, setActiveModal] = useState(null);
   const [resumeTitle, setResumeTitle] = useState("");
   const [resumeFile, setResumeFile] = useState(null);
-  const [editResumeId, setEditResumeId] = useState("");
+  const [editResumeId, setEditResumeId] = useState(null);
   const navigate = useNavigate();
 
   const loadAllResumes = () => {
@@ -24,6 +24,7 @@ function Dashboard() {
     setActiveModal(null);
     setResumeTitle("");
     setResumeFile(null);
+    setEditResumeId(null);
   };
 
   const handleFileChange = (e) => {
@@ -49,6 +50,14 @@ function Dashboard() {
     e.preventDefault();
     setActiveModal(null);
     navigate("builder/demoID01");
+  }
+
+  async function handleEditResume(e) {
+    e.preventDefault();
+    if (!editResumeId) return;
+    const resumeId = editResumeId;
+    handleCloseModal();
+    navigate(`builder/${resumeId}`);
   }
 
   useEffect(() => {
@@ -79,11 +88,15 @@ function Dashboard() {
                 resumesThemeColor[idx % resumesThemeColor.length];
               return (
                 <UsersResumeChip
-                  key={idx}
+                  key={resume._id}
                   baseColor={baseColor}
                   title={resume.title}
                   updatedAt={resume.updatedAt}
-                  onClick={() => navigate(`builder/${resume.userId}`)}
+                  onClick={() => {
+                    setEditResumeId(resume._id);
+                    setResumeTitle(resume.title);
+                    setActiveModal("edit");
+                  }}
                 />
               );
             })}
@@ -92,18 +105,32 @@ function Dashboard() {
         {activeModal && (
           <ResumeBuilderForm
             modalTitle={
-              activeModal === "create" ? "Create A Resume" : "Upload A Resume"
+              activeModal === "create"
+                ? "Create A Resume"
+                : activeModal === "upload"
+                  ? "Upload A Resume"
+                  : "Edit A Resume"
             }
-            submitLabel={activeModal === "create" ? "Create" : "Upload"}
+            submitLabel={
+              activeModal === "create"
+                ? "Create"
+                : activeModal === "upload"
+                  ? "Upload"
+                  : "Edit"
+            }
             resumeTitle={resumeTitle}
             onTitleChange={(e) => setResumeTitle(e.target.value)}
             onSubmit={
-              activeModal === "create" ? handleCreateResume : handleUploadResume
+              activeModal === "create"
+                ? handleCreateResume
+                : activeModal === "upload"
+                  ? handleUploadResume
+                  : handleEditResume
             }
             onClose={handleCloseModal}
             isUploadMode={activeModal === "upload"}
             resumeFile={resumeFile}
-            onFileChange={handleFileChange ?? null}
+            onFileChange={handleFileChange}
           />
         )}
       </div>
