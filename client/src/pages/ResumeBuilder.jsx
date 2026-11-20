@@ -2,8 +2,8 @@ import { Suspense, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { dummyResumeData, resumeSections } from "../constant/content";
 import DashboardNavigation from "../components/helpers/DashboardNavigation";
-import HorizontalRule from "../components/helpers/HorizontalRule";
 import ProgressBar from "../components/ResumeBuilder/ProgressBar";
+import SectionNavigation from "../components/ResumeBuilder/SectionNavigation";
 
 function ResumeBuilder() {
   const [resumeData, setResumeData] = useState({
@@ -45,9 +45,17 @@ function ResumeBuilder() {
           <div className="grid lg:grid-cols-12 gap-8">
             {/* left panel: Resume Builder Form */}
             <div className="relative lg:col-span-5 rounded-lg overflow-hidden">
+               <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 pt-1">
+
               <ProgressBar
                 width={`${(activeSectionIdx * 100) / (resumeSections.length - 1)}%`}
-              />
+                />
+              <SectionNavigation
+                sectionIndex={activeSectionIdx}
+                handleSectionNavigate={setActiveSectionIdx}
+                sections={resumeSections}
+                />
+                </div>
             </div>
             {/* right panel: resume preview */}
           </div>
