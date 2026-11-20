@@ -1,6 +1,7 @@
 import { Suspense, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { dummyResumeData } from "../constant/content";
+import DashboardNavigation from "../components/helpers/DashboardNavigation";
 
 function ResumeBuilder() {
   const [resumeData, setResumeData] = useState({
@@ -21,16 +22,22 @@ function ResumeBuilder() {
 
   async function handleLoadExistResume() {
     const resume = dummyResumeData.find((resume) => resume._id === id);
-    if(!resume) return; 
-    setResumeData(resume); 
+    if (!resume) return;
+    setResumeData(resume);
     document.title = resume.title;
   }
- 
-  useEffect(() => {
-    handleLoadExistResume(); 
-  }, [])
 
-  return <Suspense>Resume Builder</Suspense>;
+  useEffect(() => {
+    handleLoadExistResume();
+  }, []);
+
+  return (
+    <Suspense>
+      <main>
+       <DashboardNavigation />
+      </main>
+    </Suspense>
+  );
 }
 
 export default ResumeBuilder;
