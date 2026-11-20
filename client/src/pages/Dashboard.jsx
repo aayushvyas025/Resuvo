@@ -92,7 +92,7 @@ function Dashboard() {
               onClick={() => setActiveModal("upload")}
             />
           </div>
-          <HorizontalRule />
+          <HorizontalRule style={"border-slate-300 my-6 sm:w-[305px]"} />
           <div className="grid grid-cols-2 sm:flex flex-wrap gap-4">
             {allResumes.map((resume, idx) => {
               const baseColor =
