@@ -10,7 +10,7 @@ function ResumeBuilder() {
   const [resumeData, setResumeData] = useState({
     _id: "",
     title: "",
-    professionalInfo: {},
+    personal_info: {},
     professional_summary: "",
     experience: [],
     education: [],
@@ -29,6 +29,7 @@ function ResumeBuilder() {
 
   async function handleLoadExistResume() {
     const resume = dummyResumeData.find((resume) => resume._id === id);
+    console.log(resume)
     if (!resume) return;
     setResumeData(resume);
     document.title = resume.title;
@@ -37,6 +38,8 @@ function ResumeBuilder() {
   useEffect(() => {
     handleLoadExistResume();
   }, []);
+
+  console.log(resumeData);
 
   return (
     <Suspense>
@@ -55,7 +58,13 @@ function ResumeBuilder() {
                   handleSectionNavigate={setActiveSectionIdx}
                   sections={resumeSections}
                 />
-                <ResumeSections section={activeSection} />
+                <ResumeSections
+                  section={activeSection}
+                  personalInfo={resumeData.personal_info}
+                  handleChangeResumeData={setResumeData}
+                  removeBackground={removeBackground}
+                  handleRemoveBackground={setRemoveBackground}
+                />
               </div>
             </div>
             {/* right panel: resume preview */}
