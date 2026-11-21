@@ -4,10 +4,14 @@ import {
   Download,
   FileText,
   FolderIcon,
+  GlobeCode,
   GraduationCap,
   Laptop,
   LayoutPanelTop,
+  Mail,
+  MapPin,
   NotebookPen,
+  Phone,
   RefreshCw,
   Rocket,
   Sparkles,
@@ -435,4 +439,13 @@ export const resumeSections = [
   { id: "education", name: "Education", icon: GraduationCap },
   { id: "projects", name: "Projects", icon: FolderIcon },
   { id: "skills", name: "Skills", icon: Sparkles },
-];
+]; 
+
+export const personalInfoFormFields = [
+  {key:"full_name", label:"Full Name", icon:User, type:"text", required:true}, 
+  {key:"email", label:'Email Address', icon:Mail, type:"email", required:true},
+  {key:"phone", label:"Phone Number", icon:Phone, type:"tel"},
+  {key:"location", label:"Location", icon:MapPin, type:"text"}, 
+  {key:"profession", label:"Profession", icon:BriefcaseBusiness, type:"text"},
+  {key:"linkedin", label:"Linkedin Profile", icon:GlobeCode}
+]
