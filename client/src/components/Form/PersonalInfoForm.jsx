@@ -1,4 +1,6 @@
 import { User } from "lucide-react";
+import { personalInfoFormFields } from "../../constant/content";
+import ResumeFormInput from "../helpers/ResumeFormInput";
 
 function PersonalInfoForm({
   data,
@@ -59,6 +61,25 @@ function PersonalInfoForm({
           </div>
         )}
       </div>
+      {personalInfoFormFields.map((field) => {
+        const Icon = field.icon;
+        return (
+          <div key={field.key} className="space-y-1 mt-5">
+            <label className="flex items-center gap-2 text-sm font-medium text-gray-600">
+              <Icon className="size-5" />
+              {field.label}
+              {field.required && <span className="text-red-500">*</span>}
+            </label>
+            <ResumeFormInput
+              type={field.type}
+              value={data[field.key] || ""}
+              placeholder={`Enter your ${field.label.toLowerCase()}`}
+              onChange={(e) => handleChange(field.key, e.target.value)}
+              required={field.required}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import {
   Download,
   FileText,
   FolderIcon,
-  GlobeCode,
+  Globe2,
   GraduationCap,
   Laptop,
   LayoutPanelTop,
@@ -18,7 +18,7 @@ import {
   Star,
   User,
 } from "lucide-react";
-
+import { FaLinkedinIn } from "react-icons/fa";
 import dummy_profile from "../assets/dummy_profile.png";
 
 export const images = [
@@ -439,13 +439,36 @@ export const resumeSections = [
   { id: "education", name: "Education", icon: GraduationCap },
   { id: "projects", name: "Projects", icon: FolderIcon },
   { id: "skills", name: "Skills", icon: Sparkles },
-]; 
+];
 
 export const personalInfoFormFields = [
-  {key:"full_name", label:"Full Name", icon:User, type:"text", required:true}, 
-  {key:"email", label:'Email Address', icon:Mail, type:"email", required:true},
-  {key:"phone", label:"Phone Number", icon:Phone, type:"tel"},
-  {key:"location", label:"Location", icon:MapPin, type:"text"}, 
-  {key:"profession", label:"Profession", icon:BriefcaseBusiness, type:"text"},
-  {key:"linkedin", label:"Linkedin Profile", icon:GlobeCode}
-]
+  {
+    key: "full_name",
+    label: "Full Name",
+    icon: User,
+    type: "text",
+    required: true,
+  },
+  {
+    key: "email",
+    label: "Email Address",
+    icon: Mail,
+    type: "email",
+    required: true,
+  },
+  { key: "phone", label: "Phone Number", icon: Phone, type: "tel" },
+  { key: "location", label: "Location", icon: MapPin, type: "text" },
+  {
+    key: "profession",
+    label: "Profession",
+    icon: BriefcaseBusiness,
+    type: "text",
+  },
+  {
+    key: "linkedin",
+    label: "Linkedin Profile",
+    icon:FaLinkedinIn,
+    type: "url",
+  },
+  { key: "website", label: "Personal Website", icon: Globe2, type: "url" },
+];
