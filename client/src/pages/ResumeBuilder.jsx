@@ -58,6 +58,8 @@ function ResumeBuilder() {
                   sectionIndex={activeSectionIdx}
                   handleSectionNavigate={setActiveSectionIdx}
                   sections={resumeSections}
+                  resumeData={resumeData}
+                   handleChangeTemplate={(template) => setResumeData(prev => ({...prev, template}))}
                 />
                 <ResumeSections
                   section={activeSection}

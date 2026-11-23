@@ -1,9 +1,23 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import TemplateSelector from "../helpers/TemplateSelector";
+import ResumeColorPicker from "../helpers/ResumeColorPicker";
 
-function SectionNavigation({ sectionIndex, handleSectionNavigate, sections }) {
+function SectionNavigation({
+  sectionIndex,
+  handleSectionNavigate,
+  sections,
+  resumeData,
+  handleChangeTemplate,
+}) {
   return (
     <div className="flex justify-between items-center mb-6 border-b border-gray-300 py-1">
-      <div></div>
+      <div className="flex justify-between items-center mb-4 py-1 gap-2">
+        <TemplateSelector
+          selectedTemplate={resumeData.template}
+          onChange={handleChangeTemplate}
+        />
+        <ResumeColorPicker />
+      </div>
       <div className="flex items-center">
         {sectionIndex !== 0 && (
           <button

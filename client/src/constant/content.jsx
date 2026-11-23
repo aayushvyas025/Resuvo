@@ -467,8 +467,35 @@ export const personalInfoFormFields = [
   {
     key: "linkedin",
     label: "Linkedin Profile",
-    icon:FaLinkedinIn,
+    icon: FaLinkedinIn,
     type: "url",
   },
   { key: "website", label: "Personal Website", icon: Globe2, type: "url" },
+];
+
+export const templateCollection = [
+  {
+    id: "classic",
+    name: "Classic",
+    preview:
+      "A clean, traditional resume format with clear sections and professional typography",
+  },
+  {
+    id: "modern",
+    name: "Modern",
+    preview:
+      "A sleek design with strategic use of color and modern font choices",
+  },
+  {
+    id: "minimal-image",
+    name: "Minimal Image",
+    preview:
+      "Minimal design with a single image and clean typography.",
+  },
+  {
+    id: "minimal",
+    name: "Minimal",
+    preview:
+      "Ultra-clean design that puts your content front and center",
+  }
 ];
