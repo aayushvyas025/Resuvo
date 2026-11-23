@@ -5,6 +5,7 @@ import DashboardNavigation from "../components/helpers/DashboardNavigation";
 import ProgressBar from "../components/ResumeBuilder/ProgressBar";
 import SectionNavigation from "../components/ResumeBuilder/SectionNavigation";
 import ResumeSections from "../components/ResumeBuilder/ResumeSections";
+import ResumePreview from "../components/ResumeBuilder/ResumePreview";
 
 function ResumeBuilder() {
   const [resumeData, setResumeData] = useState({
@@ -68,6 +69,12 @@ function ResumeBuilder() {
               </div>
             </div>
             {/* right panel: resume preview */}
+            <div className="lg:col-span-7 max-lg:mt-6">
+             <div>
+              {/* Resume Actions Btns */}
+             </div>
+            <ResumePreview />
+            </div>
           </div>
         </div>
       </main>
