@@ -73,7 +73,7 @@ function ResumeBuilder() {
              <div>
               {/* Resume Actions Btns */}
              </div>
-            <ResumePreview />
+            <ResumePreview data={resumeData} template={resumeData.template} accentColor={resumeData.accent_color} />
             </div>
           </div>
         </div>
