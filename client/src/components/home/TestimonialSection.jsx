@@ -17,10 +17,10 @@ function TestimonialSection() {
       </p>
       <div className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         { 
-          testimonials.map((testimonial) => 
-            <div className="w-full max-w-88 space-y-4 rounded-md border border-gray-200 bg-white p-3 text-gray-500 transition-all duration-300 hover:-translate-y-1" key={testimonial.id}>
-          <div class="flex items-center justify-between">
-            <div class="flex gap-1">
+          testimonials.map((testimonial, index) => 
+            <div key={index} className="w-full max-w-88 space-y-4 rounded-md border border-gray-200 bg-white p-3 text-gray-500 transition-all duration-300 hover:-translate-y-1" >
+          <div className="flex items-center justify-between">
+            <div className="flex gap-1">
                 {testimonial.icon}
             </div>
             <p>{testimonial.date}</p>
@@ -30,7 +30,7 @@ function TestimonialSection() {
           </p>
           <div className="flex items-center gap-2 pt-3">
             <img
-              class="h-8 w-8 rounded-full"
+              className="h-8 w-8 rounded-full"
               src={testimonial.image}
               alt={testimonial.user}
               />
