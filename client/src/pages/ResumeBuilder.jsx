@@ -30,7 +30,6 @@ function ResumeBuilder() {
 
   async function handleLoadExistResume() {
     const resume = dummyResumeData.find((resume) => resume._id === id);
-    console.log(resume)
     if (!resume) return;
     setResumeData(resume);
     document.title = resume.title;
@@ -40,7 +39,6 @@ function ResumeBuilder() {
     handleLoadExistResume();
   }, []);
 
-  console.log(resumeData);
 
   return (
     <Suspense>

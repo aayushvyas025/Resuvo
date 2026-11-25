@@ -489,13 +489,24 @@ export const templateCollection = [
   {
     id: "minimal-image",
     name: "Minimal Image",
-    preview:
-      "Minimal design with a single image and clean typography.",
+    preview: "Minimal design with a single image and clean typography.",
   },
   {
     id: "minimal",
     name: "Minimal",
-    preview:
-      "Ultra-clean design that puts your content front and center",
-  }
+    preview: "Ultra-clean design that puts your content front and center",
+  },
+];
+
+export const colors = [
+  { name: "Blue", value: "#3B82F6" },
+  { name: "Violet", value: "#6366F1" },
+  { name: "Purple", value: "#8B5CF6" },
+  { name: "Green", value: "#10B981" },
+  { name: "Red", value: "#EF4444" },
+  { name: "Orange", value: "#F97316" },
+  { name: "Teal", value: "#14B8A6" },
+  { name: "Pink", value: "#EC4899" },
+  { name: "Gray", value: "#6B7280" },
+  { name: "Black", value: "#1F2937" },
 ];
