@@ -1,8 +1,9 @@
 import PersonalInfoForm from "../Form/PersonalInfoForm";
+import ProfessionalSummaryForm from "../Form/ProfessionalSummaryForm";
 
 function ResumeSections({
   section,
-  personalInfo,
+  data,
   handleChangeResumeData,
   removeBackground,
   handleRemoveBackground,
@@ -11,7 +12,7 @@ function ResumeSections({
     <div className="space-y-6">
       {section.id === "personal" && (
         <PersonalInfoForm
-          data={personalInfo}
+          data={data.personal_info}
           onChange={(data) =>
             handleChangeResumeData((prev) => ({ ...prev, personal_info: data }))
           }
@@ -19,6 +20,10 @@ function ResumeSections({
           setRemoveBackground={handleRemoveBackground}
         />
       )}
+      {section.id === "summary" && <ProfessionalSummaryForm  
+         data={data.professional_summary}
+         handleDataChange={(data) => handleChangeResumeData((prev) => ({...prev, professional_summary:data}))}
+       />}
     </div>
   );
 }

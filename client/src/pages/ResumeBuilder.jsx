@@ -62,7 +62,7 @@ function ResumeBuilder() {
                 />
                 <ResumeSections
                   section={activeSection}
-                  personalInfo={resumeData.personal_info}
+                  data={resumeData}
                   handleChangeResumeData={setResumeData}
                   removeBackground={removeBackground}
                   handleRemoveBackground={setRemoveBackground}
