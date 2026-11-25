@@ -8,6 +8,7 @@ function SectionNavigation({
   sections,
   resumeData,
   handleChangeTemplate,
+  handleChangeResumeColor
 }) {
   return (
     <div className="flex justify-between items-center mb-6 border-b border-gray-300 py-1">
@@ -16,7 +17,7 @@ function SectionNavigation({
           selectedTemplate={resumeData.template}
           onChange={handleChangeTemplate}
         />
-        <ResumeColorPicker />
+        <ResumeColorPicker selectedColor={resumeData.accent_color} onChange={handleChangeResumeColor} />
       </div>
       <div className="flex items-center">
         {sectionIndex !== 0 && (

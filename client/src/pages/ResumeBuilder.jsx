@@ -58,6 +58,7 @@ function ResumeBuilder() {
                   sections={resumeSections}
                   resumeData={resumeData}
                    handleChangeTemplate={(template) => setResumeData(prev => ({...prev, template}))}
+                   handleChangeResumeColor={(color) => setResumeData(prev =>({...prev, accent_color:color}) )}
                 />
                 <ResumeSections
                   section={activeSection}

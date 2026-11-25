@@ -15,8 +15,10 @@ function ResumeColorPicker({ selectedColor, onChange }) {
       >
         <Palette size={16} />
         <span className="max-sm:hidden">Accent</span>
-      </button> 
-      {isOpen && <PickerOptions />}
+      </button>
+      {isOpen && (
+        <PickerOptions selectedColor={selectedColor} onChange={onChange} />
+      )}
     </div>
   );
 }
