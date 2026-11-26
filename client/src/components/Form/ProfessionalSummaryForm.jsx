@@ -8,6 +8,8 @@ function ProfessionalSummaryForm({ data, onChange }) {
       <FormSectionHeader
         title={"Professional Summary"}
         subtitle={"Add summary for your resume here"}
+        icon={Sparkles}
+        btn={"AI Enhance"}
       />
       <ResumeTextArea
         value={data || ""}
