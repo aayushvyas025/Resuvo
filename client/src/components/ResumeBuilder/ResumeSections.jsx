@@ -1,5 +1,6 @@
 import PersonalInfoForm from "../Form/PersonalInfoForm";
 import ProfessionalSummaryForm from "../Form/ProfessionalSummaryForm";
+import UserExperienceForm from "../Form/UserExperienceForm";
 
 function ResumeSections({
   section,
@@ -28,6 +29,15 @@ function ResumeSections({
               ...prev,
               professional_summary: data,
             }))
+          }
+        />
+      )}
+
+      {section.id === "experience" && (
+        <UserExperienceForm
+          data={data.experience}
+          onChange={(data) =>
+            handleChangeResumeData((prev) => ({ ...prev, experience: data }))
           }
         />
       )}
