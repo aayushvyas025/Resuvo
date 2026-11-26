@@ -1,4 +1,4 @@
-function ResumeTextArea({ value = "", onChange, instructions }) {
+function ResumeTextArea({ value, onChange, instructions }) {
   return (
     <div className="mt-6">
       <textarea

@@ -20,10 +20,17 @@ function ResumeSections({
           setRemoveBackground={handleRemoveBackground}
         />
       )}
-      {section.id === "summary" && <ProfessionalSummaryForm  
-         data={data.professional_summary}
-         handleSummaryChange={(data) => handleChangeResumeData((prev) => ({...prev, professional_summary:data}))}
-       />}
+      {section.id === "summary" && (
+        <ProfessionalSummaryForm
+          data={data.professional_summary}
+          onChange={(data) =>
+            handleChangeResumeData((prev) => ({
+              ...prev,
+              professional_summary: data,
+            }))
+          }
+        />
+      )}
     </div>
   );
 }
