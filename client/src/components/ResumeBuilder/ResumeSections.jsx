@@ -22,7 +22,7 @@ function ResumeSections({
       )}
       {section.id === "summary" && <ProfessionalSummaryForm  
          data={data.professional_summary}
-         handleDataChange={(data) => handleChangeResumeData((prev) => ({...prev, professional_summary:data}))}
+         handleSummaryChange={(data) => handleChangeResumeData((prev) => ({...prev, professional_summary:data}))}
        />}
     </div>
   );
