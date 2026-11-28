@@ -1,6 +1,6 @@
-import { PlusIcon, Sparkles, Trash2 } from "lucide-react";
+import { Briefcase, Sparkles, Trash2 } from "lucide-react";
 import FormSectionHeader from "../helpers/FormSectionHeader";
-import ExperienceTemplate from "../helpers/ExperienceTemplate";
+import ResumeFormTemplate from "../helpers/ResumeFormTemplate";
 
 function UserExperienceForm({ data, onChange }) {
   function addExperience() {
@@ -32,13 +32,16 @@ function UserExperienceForm({ data, onChange }) {
       <FormSectionHeader
         title=" Professional Experience"
         subtitle={"Add your job experience"}
-        icon={PlusIcon}
+        icon={Briefcase}
         btn={"Add Experience"}
         onClick={addExperience}
       />
 
       {data.length === 0 ? (
-        <ExperienceTemplate />
+        <ResumeFormTemplate
+          title={"No Work Experience Added Yet"}
+          subtitle={'Click "Add Experience" to get started.'}
+        />
       ) : (
         <div className="space-y-4">
           {data.map((experience, idx) => (

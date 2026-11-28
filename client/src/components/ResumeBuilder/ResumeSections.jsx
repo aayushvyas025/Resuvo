@@ -1,3 +1,4 @@
+import EducationForm from "../Form/EducationForm";
 import PersonalInfoForm from "../Form/PersonalInfoForm";
 import ProfessionalSummaryForm from "../Form/ProfessionalSummaryForm";
 import UserExperienceForm from "../Form/UserExperienceForm";
@@ -38,6 +39,15 @@ function ResumeSections({
           data={data.experience}
           onChange={(data) =>
             handleChangeResumeData((prev) => ({ ...prev, experience: data }))
+          }
+        />
+      )}
+
+      {section.id === "education" && (
+        <EducationForm
+          data={data.education}
+          onChange={(data) =>
+            handleChangeResumeData((prev) => ({ ...prev, education: data }))
           }
         />
       )}
